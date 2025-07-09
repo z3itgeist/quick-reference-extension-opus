@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Contatos Úteis",
+  "version": "1.0",
+  "description": "Extensão com modais para copiar telefones e e-mails.",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["clipboardWrite"]
+}

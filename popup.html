@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Contatos Úteis</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Jund Help</h1>
+
+  <button class="abrir-modal" data-modal="modal-exames-imagens">Exames de imagem</button>
+  <button class="abrir-modal" data-modal="modal-exames-laboratoriais">Exames laboratoriais</button>
+  <button class="abrir-modal" data-modal="modal-0800">Contatos Unimeds</button>
+  <button class="abrir-modal" data-modal="modal-exames-cardiologicos">Exames cardiologicos</button>
+  <button class="abrir-modal" data-modal="modal-financeiro">Financeiro PF, PJ, ADM</button>
+  <button class="abrir-modal" data-modal="modal-Puncao">Punção Joelho Drs</button>
+  <button class="abrir-modal" data-modal="AIS">AIS/NAS, AMB, LAUDOS</button>
+  <button class="abrir-modal" data-modal="modal-PA">PA</button>
+
+  <div id="modal-exames-imagens" class="modal">
+    <div class="modal-content">
+      <span class="fechar">&times;</span>
+      <h2>Exames de imagem</h2>
+      <button data-text="(11) 3109-7100">Icon: RX, RM, US</button>
+      <button data-text="(11) 4523-4700">Pinheiros: RM, US, TM, Mamografia</button>
+      <button data-text="(11) 4523-3636">Unica: US, Mamografia, Densitometria</button>
+    </div>
+  </div>
+
+  <div id="modal-exames-laboratoriais" class="modal">
+    <div class="modal-content">
+      <span class="fechar">&times;</span>
+      <h2>Exames Laboratoriais</h2>
+      <button data-text="Laboratorio AFIP (11) 4527-3299 ...">Laboratorio AFIP/Vila Arens</button>
+      <button data-text="Laboratorio Eloy Chaves,(11) 2108-7760 ...">Laboratorio Eloy Chaves</button>
+      <button data-text="Laboratorio Anchieta, (11) 4522-7327 ...">Laboratorio Anchieta</button>
+      <button data-text="AFIP (11) 4527-3299, Eloy (11) 2108-7760, Anchieta (11) 4522-7327">***</button>
+    </div>
+  </div>
+
+  <div id="modal-exames-cardiologicos" class="modal">
+    <div class="modal-content">
+      <span class="fechar">&times;</span>
+      <h2>Exames Cardiologicos</h2>
+      <button data-text="(11) 4523-1166">CD-COR</button>
+      <button data-text="(11) 4521-4611">JUNDCOR</button>
+      <button data-text="(11) 4523-0468">ANGIOSCAN</button>
+    </div>
+  </div>
+
+  <div id="modal-0800" class="modal">
+    <div class="modal-content">
+      <span class="fechar">&times;</span>
+      <h2>Contatos Unimeds</h2>
+      <button data-text="0800 013 66 88">Unimed Campinas</button>
+      <button data-text="0800 942 0011">Unimed Central Nacional</button>
+      <button data-text="0800 016 66 33">Unimed Seguros</button>
+      <button data-text="0800 772 3030">Unimed FESP</button>
+    </div>
+  </div>
+
+  <div id="modal-financeiro" class="modal">
+    <div class="modal-content">
+      <span class="fechar">&times;</span>
+      <h2>Financeiro</h2>
+      <button data-text="(11) 4583-1089 e (11) 4583-1099">Relações Empresariais PJ</button>
+      <button data-text="(11) 4583-0983">Financeiro PF</button>
+      <button data-text="(11) 4583-1040">Vendas</button>
+      <button data-text="0800 941 4962.atendimento pelo WhatsApp (11) 3003-5200">ALLCARE</button>
+      <button data-text="(11) 4349-4200 E 08009400473 OU 945024905">CORPORE</button>
+      <button data-text="(11) 2174-4222 ou 11 4807-5955">UNICONSULT</button>
+    </div>
+  </div>
+
+  <div id="modal-Puncao" class="modal">
+    <div class="modal-content">
+      <span class="fechar">&times;</span>
+      <h2>Drs realizam Punção</h2>
+      <button data-text="Dr. Luiz Otávio Alves (11) 4586-1499. Dr. Raul Munch Cavalcanti (11) 4521-4710">Dr. Luiz Otávio e Dr. Raul Munch</button>
+    </div>
+  </div>
+
+  <div id="AIS" class="modal">
+    <div class="modal-content">
+      <span class="fechar">&times;</span>
+      <h2>AIS/NAS, AMB, LAUDOS</h2>
+      <button data-text="AIS/NAS/AMBULATORIO (11) 2923 9000">AIS /NAS/ AMBULATORIO</button>
+      <button data-text="LAUDOS WPP (11) 99496-8083">Whatsapp envio Laudos</button>
+    </div>
+  </div>
+
+  <div id="modal-PA" class="modal">
+    <div class="modal-content">
+      <span class="fechar">&times;</span>
+      <h2>PA, Infantil, Virtual</h2>
+      <button data-text="PA Adulto Jundiai Avenida Jundiaí, 405, Anhangabaú, Jundiaí (11) 4523-5000">PA Adulto Jundiai</button>
+      <button data-text="PA Infantil RUA DOUTOR LEONARDO CAVALCANTI, 74 - CENTRO Jundiaí/SP (11) 4523-5480">PA Infantil Jundiai</button>
+      <button data-text="WPP AGENDA PA VIRTUAL +55 21 96696-4821">WPP AGENDA PA VIRTUAL</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
