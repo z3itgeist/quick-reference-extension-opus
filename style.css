@@ -14,7 +14,7 @@ h1, h2 {
   margin-bottom: 10px;
   justify-content: center;  /* CORRETO: centraliza horizontalmente */
   align-items: center;      /* CORRETO: alinha verticalmente */
-  margin;8px;
+  margin: 8px;
   
 }
 
@@ -30,6 +30,33 @@ button {
   transition: background-color 0.3s ease, color 0.3s ease;
   text-align: center;
   margin: 10px;
+}
+
+/* Estilo para o cabeçalho do App */
+#app-header {
+    display: flex;
+    justify-content: space-between; /* Isso empurra os itens para os cantos opostos */
+    align-items: center;
+    margin-bottom: 10px; /* Um pequeno espaço abaixo do cabeçalho */
+}
+
+/* Garante que o título não tenha margens estranhas */
+#app-header h1 {
+    margin: 0;
+}
+
+/* Estilo para o novo botão de troca de operação */
+.change-op-button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px; /* Aumenta o tamanho do emoji */
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.change-op-button:hover {
+    background-color: #f0f0f0;
 }
 
 button:hover {
