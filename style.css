@@ -1,9 +1,4 @@
-@font-face {
-    font-family: 'Montserrat';
-    src: url('Montserrat-VariableFont_wght.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 body {
@@ -16,8 +11,8 @@ body {
   background-position: center;
   .duda {
     position: absolute;
-    width: 230px;
-    height: 231px;
+    width: 280px;
+    height: 280px;
     z-index: -1;
     margin-right: -114px;
   }
@@ -98,7 +93,7 @@ button {
 }
 
 .change-op-button:hover {
-    background-color: #f0f0f0;
+    background-color: #f0f0f000;
 }
 
 button:hover {
