@@ -10,11 +10,19 @@ body {
   font-family: 'Montserrat';
   padding: 15px;
   width: 300px;
-  background-image: url('fundo\ duda.png');
+  background-image: url('fundo.png');
   background-repeat: no-repeat;
   background-size: cover; /* ou 'contain' ou 'auto' */
   background-position: center;
+  .duda {
+    position: absolute;
+    width: 230px;
+    height: 231px;
+    z-index: -1;
+    margin-right: -90px;
+  }
 }
+
 
 h1, h2 {
   font-family: 'Montserrat';
