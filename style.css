@@ -1,26 +1,47 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body {
-  font-family: sans-serif;
+  font-family: 'Montserrat';
   padding: 15px;
   width: 300px;
-  background-image: url('zig-zag.svg');
+  background-image: url('fundo\ duda.png');
   background-repeat: no-repeat;
   background-size: cover; /* ou 'contain' ou 'auto' */
   background-position: center;
 }
 
 h1, h2 {
+  font-family: 'Montserrat';
   display: flex;
   font-size: 24px;
   margin-bottom: 10px;
   justify-content: center;  /* CORRETO: centraliza horizontalmente */
   align-items: center;      /* CORRETO: alinha verticalmente */
-  margin;8px;
+  margin: 8px;
+  font-weight: 900;
   
+}
+
+p {
+  font-family: 'Montserrat';
+  display: flex;
+  font-size: 15px;
+  margin-bottom: 10px;
+  justify-content: center;  /* CORRETO: centraliza horizontalmente */
+  align-items: center;      /* CORRETO: alinha verticalmente */
+  margin: 8px;
+  font-weight: 500;
 }
 
 button {
   width: 100%;
-  background-color: rgb(24, 88, 24);
+  background-color: rgb(40, 35, 93);
   color: white;
   border: none;
   padding: 14px;
@@ -32,8 +53,35 @@ button {
   margin: 10px;
 }
 
+/* Estilo para o cabeçalho do App */
+#app-header {
+    display: flex;
+    justify-content: space-between; /* Isso empurra os itens para os cantos opostos */
+    align-items: center;
+    margin-bottom: 10px; /* Um pequeno espaço abaixo do cabeçalho */
+}
+
+/* Garante que o título não tenha margens estranhas */
+#app-header h1 {
+    margin: 0;
+}
+
+/* Estilo para o novo botão de troca de operação */
+.change-op-button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px; /* Aumenta o tamanho do emoji */
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.change-op-button:hover {
+    background-color: #f0f0f0;
+}
+
 button:hover {
-  background-color: greenyellow;
+  background-color: rgb(217, 17, 120);
   color: black; /* <- Adicionado para mudar o texto ao passar o mouse */
 }
 
@@ -73,4 +121,22 @@ button:hover {
 
 .fechar:hover {
   color: black;
+}
+
+#app-header {
+  position: relative;
+  display: flex;
+  justify-content: center; /* centraliza o título */
+  align-items: center;
+}
+
+#popup-title {
+  font-size: 24;
+  margin: 0;
+}
+
+#change-op-button-container{
+  position: absolute;
+  right: 0; /* botão gruda no lado direito */
+
 }

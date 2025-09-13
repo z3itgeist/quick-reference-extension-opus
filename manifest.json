@@ -1,10 +1,32 @@
 {
   "manifest_version": 3,
-  "name": "Contatos Úteis",
+  
+  "name": "Ed Help",
   "version": "1.0",
-  "description": "Extensão com modais para copiar telefones e e-mails.",
+  "description": "Acesso rápido a contatos e informações úteis para o Call Center.",
+  
   "action": {
     "default_popup": "popup.html"
   },
-  "permissions": ["clipboardWrite"]
+  
+  "permissions": [
+    "storage",
+    "clipboardWrite"
+  ],
+  
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "db/dados_operacoes.sqlite",
+        "js/sql-wasm.wasm"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval';"
+  }
 }
