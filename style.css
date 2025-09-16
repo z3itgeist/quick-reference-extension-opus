@@ -1,26 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 body {
-  font-family: sans-serif;
+  font-family: 'Montserrat';
   padding: 15px;
   width: 300px;
-  background-image: url('zig-zag.svg');
+  background-image: url('fundo.png');
   background-repeat: no-repeat;
   background-size: cover; /* ou 'contain' ou 'auto' */
   background-position: center;
+  .duda {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    z-index: -1;
+    margin-right: -114px;
+  }
 }
 
-h1, h2 {
+
+h1 {
+  font-family: 'Montserrat';
+  display: flex;
+  font-size: 30px;
+  margin-bottom: 10px;
+  justify-content: center;  /* CORRETO: centraliza horizontalmente */
+  align-items: center;      /* CORRETO: alinha verticalmente */
+  margin: 8px;
+  font-weight: 900;
+  color: white;
+  
+}
+h2 {
+  font-family: 'Montserrat';
   display: flex;
   font-size: 24px;
   margin-bottom: 10px;
   justify-content: center;  /* CORRETO: centraliza horizontalmente */
   align-items: center;      /* CORRETO: alinha verticalmente */
   margin: 8px;
-  
+  font-weight: 900;
+
+}
+
+p {
+  font-family: 'Montserrat';
+  display: flex;
+  font-size: 15px;
+  margin-bottom: 10px;
+  justify-content: center;  /* CORRETO: centraliza horizontalmente */
+  align-items: center;      /* CORRETO: alinha verticalmente */
+  margin: 8px;
+  font-weight: 500;
+  color: white;
 }
 
 button {
   width: 100%;
-  background-color: rgb(24, 88, 24);
+  background-color: rgb(40, 35, 93);
   color: white;
   border: none;
   padding: 14px;
@@ -56,11 +93,11 @@ button {
 }
 
 .change-op-button:hover {
-    background-color: #f0f0f0;
+    background-color: #f0f0f000;
 }
 
 button:hover {
-  background-color: greenyellow;
+  background-color: rgb(217, 17, 120);
   color: black; /* <- Adicionado para mudar o texto ao passar o mouse */
 }
 
@@ -100,4 +137,22 @@ button:hover {
 
 .fechar:hover {
   color: black;
+}
+
+#app-header {
+  position: relative;
+  display: flex;
+  justify-content: center; /* centraliza o título */
+  align-items: center;
+}
+
+#popup-title {
+  font-size: 24;
+  margin: 0;
+}
+
+#change-op-button-container{
+  position: absolute;
+  right: 0; /* botão gruda no lado direito */
+
 }
