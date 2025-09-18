@@ -1,10 +1,22 @@
+async function initDb() {
+    try{ const SQL = await initSqlJs({locateFile: file => `js/${file}`});
+         const dbUrl = chrome.runtime.getURL('db/dados_operacoes.sqlite');
+         const response = await fetch(dbUrl);
+         const dbArrayBuffer = await response.arrayBuffer();
+         db = new SQL.Database(new Uint8Array(dbArrayBuffer));
+         
+         console.log("Banco de dados inicializado com sucesso.");
+
+         return db;
+    } catch (error) {
+        console.log("Erro ao inicializar o banco de dados:", error);
+        return null;
+    }   
+}
+
 async function buscarDadosDaOperacao(operacaoId) {
     try {
-        const SQL = await initSqlJs({ locateFile: file => `js/${file}` });
-        const dbUrl = chrome.runtime.getURL('db/dados_operacoes.sqlite');
-        const response = await fetch(dbUrl);
-        const dbArrayBuffer = await response.arrayBuffer();
-        const db = new SQL.Database(new Uint8Array(dbArrayBuffer));
+        const db = await initDb();
         const stmt = db.prepare("SELECT tipo_contato, nome_contato, info_copiavel FROM contatos WHERE id_operacao = :id ORDER BY tipo_contato, nome_contato");
         stmt.bind({ ':id': operacaoId });
         const resultados = [];
@@ -16,6 +28,21 @@ async function buscarDadosDaOperacao(operacaoId) {
         return resultados;
     } catch (error) {
         console.error("Falha ao carregar dados:", error);
+        return null;
+    }
+}
+
+async function buscarNomeDaOperacao(operacaoId) {
+    try {
+        const db = await initDb();
+        const stmt = db.prepare("SELECT nome_operacao FROM operacoes WHERE id = :id");
+        const resultado = stmt.getAsObject({ ':id': operacaoId });
+        stmt.free();
+        db.close();
+        // Retorna apenas o nome da operação, ou null se não encontrar
+        return resultado ? resultado.nome_operacao : null;
+    } catch (error) {
+        console.error("Erro ao buscar nome da operação:", error);
         return null;
     }
 }
@@ -40,7 +67,7 @@ function renderizarModais(dadosAgrupados) {
     const categorias = Object.keys(dadosAgrupados);
     let html = '';
     categorias.forEach(categoria => {
-        const modalId = `modal-${categoria.replace(/[^a-zA-Z0-9]/g, '-')}`;
+        const modalId = `modal-${categoria.replace(/[^a-zA-Z0-9]/g, '-',)}`;
         html += `
             <div id="${modalId}" class="modal">
                 <div class="modal-content">
@@ -48,7 +75,7 @@ function renderizarModais(dadosAgrupados) {
                     <h2>${categoria}</h2>
                     ${
                         dadosAgrupados[categoria].map(item =>
-                            `<button class="copiar-info" data-text="${item.info_copiavel.replace(/"/g, '&quot;')}">${item.nome_contato}</button>`
+                            `<button class="copiar-info" data-text="${item.info_copiavel.replace(/"/g, '&quot;')}">${item.nome_contato}<br>${item.info_copiavel}</button>`
                         ).join('')
                     }
                 </div>
@@ -81,21 +108,6 @@ function renderizarBotaoDeTroca(totalOperacoesSalvas) {
 
     // Insere o botão na página
     container.appendChild(button);
-}
-
-async function buscarNomeDaOperacao(operacaoId) {
-    try {
-        const db = await loadDB(); // Reutilizamos a função que já temos!
-        const stmt = db.prepare("SELECT nome_operacao FROM operacoes WHERE id = :id");
-        const resultado = stmt.getAsObject({ ':id': operacaoId });
-        stmt.free();
-        db.close();
-        // Retorna apenas o nome da operação, ou null se não encontrar
-        return resultado ? resultado.nome_operacao : null;
-    } catch (error) {
-        console.error("Erro ao buscar nome da operação:", error);
-        return null;
-    }
 }
 
 function configurarEventListeners() {

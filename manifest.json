@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   
-  "name": "Ed Help",
-  "version": "1.0",
+  "name": "ED Help",
+  "version": "2.0.0",
   "description": "Acesso rápido a contatos e informações úteis para o Call Center.",
   
   "action": {
