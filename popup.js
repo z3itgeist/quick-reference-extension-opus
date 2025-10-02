@@ -85,6 +85,39 @@ function renderizarModais(dadosAgrupados) {
     container.innerHTML = html;
 }
 
+/* função em teste, funcionaria com as informações de info_copiavel separadas por ; para poder organizar por linha nos botões.
+ainda não vai ser usada porque talvez mudemos o bd
+
+function renderizarModais(dadosAgrupados) {
+    const container = document.getElementById('modals-container');
+    if (!container) return;
+
+    const categorias = Object.keys(dadosAgrupados);
+    let html = '';
+    categorias.forEach(categoria => {
+        const modalId = `modal-${categoria.replace(/[^a-zA-Z0-9]/g, '-',)}`;
+        html += `
+            <div id="${modalId}" class="modal">
+                <div class="modal-content">
+                    <span class="fechar">&times;</span>
+                    <h2>${categoria}</h2>
+                    ${
+                        dadosAgrupados[categoria].map(item => {
+                            const infoSeparadaEmLinhas = item.info_copiavel.split(';').join('<br>');
+                            const infoLimpa = item.info_copiavel.replace(/"/g, '&quot;');
+                            console.log(infoSeparadaEmLinhas);
+                            console.log(infoLimpa);
+                            `<button class="copiar-info" data-text="${infoLimpa}">${item.nome_contato}<br>${infoSeparadaEmLinhas}</button>`
+                        }).join('')
+                    }
+                </div>
+            </div>
+        `;
+    });
+    container.innerHTML = html;
+}
+*/
+
 // Nova função para renderizar o botão de troca de operação
 function renderizarBotaoDeTroca(totalOperacoesSalvas) {
     // Se o usuário só tem 1 (ou menos) operação salva, não faz nada.
