@@ -129,6 +129,11 @@ function renderizarBotaoDeConfiguracoes(){
 
     button.addEventListener('click', () => {
 
+        const mensagem = "Deseja selecionar novamente as operações atendidas?";
+        const resposta = confirm(mensagem);
+
+        if(resposta === true){
+
             chrome.storage.local.remove(['operacoesSelecionadas'], () => {
             console.log("Operações selecionadas limpas do local storage.");
             
@@ -138,6 +143,7 @@ function renderizarBotaoDeConfiguracoes(){
             window.location.href = 'onboarding.html'; 
             });
         });
+        }
     });
 
     container.appendChild(button);
