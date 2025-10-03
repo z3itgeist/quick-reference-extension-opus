@@ -118,6 +118,34 @@ function renderizarModais(dadosAgrupados) {
 }
 */
 
+function renderizarBotaoDeConfiguracoes(){
+    const container = document.getElementById('config-button-container');
+    if (!container) return;
+
+    const button = document.createElement('button');
+    button.className = 'change-op-button';
+    button.title = 'Configurações';
+    button.innerHTML = '⚙️';
+
+    button.addEventListener('click', () => {
+
+            chrome.storage.local.remove(['operacoesSelecionadas'], () => {
+            console.log("Operações selecionadas limpas do local storage.");
+            
+            chrome.storage.session.remove(['operacaoAtivaId'], () => {
+            console.log("Operação ativa da sessão limpa.");
+                
+            window.location.href = 'onboarding.html'; 
+            });
+        });
+    });
+
+    container.appendChild(button);
+
+    
+}
+
+
 // Nova função para renderizar o botão de troca de operação
 function renderizarBotaoDeTroca(totalOperacoesSalvas) {
     // Se o usuário só tem 1 (ou menos) operação salva, não faz nada.
@@ -170,6 +198,7 @@ function configurarEventListeners() {
 }
 
 async function iniciarPopup() {
+    renderizarBotaoDeConfiguracoes();
     
     let sessionData = await chrome.storage.session.get(['operacaoAtivaId']);
     let operacaoId = sessionData.operacaoAtivaId;

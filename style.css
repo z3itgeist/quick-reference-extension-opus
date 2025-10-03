@@ -156,3 +156,12 @@ button:hover {
   right: 0; /* botão gruda no lado direito */
 
 }
+
+#config-button-container{
+  position: absolute;
+  right: 40x; 
+}
+
+#operacaoSelect{
+  color: white
+}
