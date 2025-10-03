@@ -9,15 +9,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover; /* ou 'contain' ou 'auto' */
   background-position: center;
-  .duda {
-    position: absolute;
-    width: 280px;
-    height: 280px;
-    z-index: -1;
-    margin-right: -114px;
-  }
 }
-
 
 h1 {
   font-family: 'Montserrat';
@@ -71,6 +63,7 @@ button {
 
 /* Estilo para o cabeçalho do App */
 #app-header {
+    position: relative;
     display: flex;
     justify-content: space-between; /* Isso empurra os itens para os cantos opostos */
     align-items: center;
@@ -80,6 +73,16 @@ button {
 /* Garante que o título não tenha margens estranhas */
 #app-header h1 {
     margin: 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.duda {
+  position: absolute;
+  width: 30%;
+  height:auto;
+  z-index: -1;
+  margin-right: -114px;
 }
 
 /* Estilo para o novo botão de troca de operação */
@@ -139,27 +142,18 @@ button:hover {
   color: black;
 }
 
-#app-header {
-  position: relative;
-  display: flex;
-  justify-content: center; /* centraliza o título */
-  align-items: center;
-}
-
 #popup-title {
   font-size: 24;
   margin: 0;
+  width: 70%;
 }
 
 #change-op-button-container{
-  position: absolute;
-  right: 0; /* botão gruda no lado direito */
-
+  width: 10%;
 }
 
 #config-button-container{
-  position: absolute;
-  right: 40x; 
+  width:10%;
 }
 
 #operacaoSelect{
