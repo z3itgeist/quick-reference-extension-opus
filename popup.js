@@ -190,10 +190,10 @@ function configurarEventListeners() {
         if (target.classList.contains('copiar-info')) {
             const texto = target.getAttribute('data-text');
             navigator.clipboard.writeText(texto).then(() => {
-                const original = target.textContent;
-                target.textContent = "✅ Copiado!";
+                const original = target.innerHTML;
+                target.innerHTML = "✅ Copiado!";
                 setTimeout(() => {
-                    target.textContent = original;
+                    target.innerHTML = original;
                 }, 1000);
             });
         }
